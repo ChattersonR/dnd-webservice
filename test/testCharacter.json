@@ -1,5 +1,6 @@
 {
     "characterInfo": {
+        "characterName": "John the Barbur",
         "class": [
             { "className": "Fighter", "level": 3 },
             { "className": "Druid", "level":1 }
@@ -7,6 +8,7 @@
         "background": "Bingbong was a townguard, and then retired to be a forest hermit.",
         "experience":10000,
         "race": "Human",
+        "alignment": "Neutral Neutral",
         "playerName": "Thadious Badgerton",
         "personalityTraits": "Couragous\nStrong",
         "ideals": "Get off my lawn you damn kids",
@@ -40,21 +42,27 @@
         "tempHp": 2,
         "totalHitDie": 5,
         "currentHitDie": 2,
-        "deathSaveSuccess": 1,
-        "deathSaveFailure": 2
+        "strengthSave": {"class?": true, "save": 3},
+        "dexteritySave": {"class?": true, "save": 3},
+        "constitutionSave": {"class?": false, "save": 1},
+        "intelligenceSave": {"class?": false, "save": 2},
+        "wisdomSave": {"class?": true, "save": 3},
+        "charismaSave": {"class?": false, "save": 1},
+        "deathSaveSuccess": [true, true, false],
+        "deathSaveFailure": [true, false, false]
     },
 
     "attackInfo": {
         "attacks":
         [
             {
-                "name": "Staff",
+                "weaponName": "Staff",
                 "attackBonus": 6,
                 "attackDamageType": { "faces": 6, "count": 2 },
                 "attackDamageBonus": 3
             },
             {
-                "name": "Bow",
+                "weaponName": "Bow",
                 "attackBonus": 4,
                 "attackDamageType": { "faces": 8, "count": 1 },
                 "attackDamageBonus": 1
