@@ -29,7 +29,7 @@ function parseClassLevelString(classLevelString){
   }
 
   console.log("Parsing classLevelString: " + classLevelString);
-  var classLevelStringArray = classLevelString.split(', ');
+  var classLevelStringArray = classLevelString.split(/[, ]+/);
   var returnArray = [];
   classLevelStringArray.forEach(function(element){
     var classLevel = {};
