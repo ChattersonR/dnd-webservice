@@ -1,0 +1,112 @@
+{
+    "characterInfo": {
+        "characterName": "",
+        "class": [
+        ],
+        "background": "",
+        "experience":0,
+        "race": "",
+        "alignment": "Neutral Neutral",
+        "playerName": "Thadious Badgerton",
+        "personalityTraits": "Couragous\nStrong",
+        "ideals": "Get off my lawn you damn kids",
+        "flaws": "Dumb\nShort\nNearsighted",
+        "bonds": "Johnny the Badger is a companion.\nStrump the guard was his tutor"
+    },
+
+    "stats": {
+        "strength": 16,
+        "strengthMod": 3,
+        "dexterity": 12,
+        "dexterityMod": 1,
+        "constitution": 14,
+        "constitutionMod": 2,
+        "intelligence": 10,
+        "intelligenceMod": 0,
+        "wisdom": 16,
+        "wisdomMod": 3,
+        "charisma": 8,
+        "charismaMod": -1,
+        "proficiencyBonus": 3,
+        "perception": 3
+    },
+
+    "survivalInfo": {
+        "armorClass": 13,
+        "initiative": 11,
+        "speed": 5,
+        "maxHp": 50,
+        "currentHp": 45,
+        "tempHp": 2,
+        "totalHitDie": 5,
+        "currentHitDie": 2,
+        "strengthSave": {"class?": true, "save": 3},
+        "dexteritySave": {"class?": true, "save": 3},
+        "constitutionSave": {"class?": false, "save": 1},
+        "intelligenceSave": {"class?": false, "save": 2},
+        "wisdomSave": {"class?": true, "save": 3},
+        "charismaSave": {"class?": false, "save": 1},
+        "deathSaveSuccess": [true, true, false],
+        "deathSaveFailure": [true, false, false]
+    },
+
+    "attackInfo": {
+        "attacks":
+        [
+            {
+                "weaponName": "Staff",
+                "attackBonus": 6,
+                "attackDamageType": { "faces": 6, "count": 2 },
+                "attackDamageBonus": 3
+            },
+            {
+                "weaponName": "Bow",
+                "attackBonus": 4,
+                "attackDamageType": { "faces": 8, "count": 1 },
+                "attackDamageBonus": 1
+            }
+        ]
+    },
+
+    "inventory": {
+        "items":
+        [
+            {
+                "name": "Candle",
+                "count": 6,
+                "weight": 0.1,
+                "description": "A candle to light your way."
+            },
+            {
+                "name": "Rations",
+                "count": 20,
+                "weight": 0.1,
+                "description": "Each ration is food for one meal"
+            },
+            {
+                "name": "Staff",
+                "count": 1,
+                "weight": 5,
+                "description": "A walking stick. Can double as a cudgel"
+            },
+            {
+                "name": "Bow",
+                "count": 1,
+                "weight": 5,
+                "description": "A bow for hunting."
+            },
+            {
+                "name": "Arrows",
+                "count": 50,
+                "weight": 0.2,
+                "description": "Arrows for the bow. Standard iron tipped broadhead arrows"
+            },
+            {
+                "name": "Backpack",
+                "count": 1,
+                "weight": 2,
+                "description": "A Sack for carrying shit"
+            }
+        ]
+    }
+}
