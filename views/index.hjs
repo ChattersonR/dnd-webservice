@@ -2,10 +2,26 @@
 <html>
   <head>
     <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
+    <table >
+      <tr>
+        <th>
+          Character Name
+        </th>
+      </tr>
+      {{#names}}
+      <tr>
+        <td>
+          <a href="http://localhost:3000/{{.}}">{{.}}</a><br />
+        </td>
+      </tr>
+      {{/names}}
+    </table>
+    <form method="post">
+      <input class="w-input" id="newCharName" maxlength="256" name="newCharName" placeholder="Character Name" required="required" type="text">
+      <button type="submit">Create</button>
+    </form>
   </body>
 </html>

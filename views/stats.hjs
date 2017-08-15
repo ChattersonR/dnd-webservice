@@ -24,58 +24,59 @@
 
 <body>
     <div class="w-form">
-        <form>
-            <input class="text-field-2 w-input" id="charName" maxlength="256" name="charName" placeholder="Character Name" required="required" type="text" value="{{characterInfo.characterName}}">
+        <form action="/{{_id}}"method="post">
+            <button type="submit">Save</button><br />
+            <input class="text-field-2 w-input" id="charName" maxlength="256" name="charName" placeholder="Character Name" type="text" value="{{characterInfo.characterName}}">
             <div class="w-row">
                 <div class="w-col w-col-4">
                     <label for="classLevel">Class &amp; Level</label>
-                    <input class="w-input" id="classLevel" maxlength="256" name="classLevel" placeholder="Example Text" required="required" type="text" value="{{#characterInfo.class}}{{className}}:{{level}}, {{/characterInfo.class}}">
+                    <input class="w-input" id="classLevel" maxlength="256" name="classLevel" placeholder="Example Text" type="text" value="{{#characterInfo.class}}{{className}}:{{level}}, {{/characterInfo.class}}">
                     <label for="race">Race</label>
-                    <input class="w-input" id="race" maxlength="256" name="race" placeholder="Example Text" required="required" type="text" value="{{characterInfo.race}}">
+                    <input class="w-input" id="race" maxlength="256" name="race" placeholder="Example Text" type="text" value="{{characterInfo.race}}">
                 </div>
                 <div class="w-col w-col-4">
                     <label for="background">Background</label>
-                    <input class="w-input" id="background" maxlength="256" name="background" placeholder="Example Text" required="required" type="text" value="{{characterInfo.background}}">
+                    <input class="w-input" id="background" maxlength="256" name="background" placeholder="Example Text" type="text" value="{{characterInfo.background}}">
                     <label for="alignment">Alignment</label>
-                    <input class="w-input" id="alignment" maxlength="256" name="alignment" placeholder="Example Text" required="required" type="text" value="{{characterInfo.alignment}}">
+                    <input class="w-input" id="alignment" maxlength="256" name="alignment" placeholder="Example Text" type="text" value="{{characterInfo.alignment}}">
                 </div>
                 <div class="w-col w-col-4">
                     <label for="experience">Experience</label>
-                    <input class="w-input" id="experience" maxlength="256" name="experience" placeholder="Example Text" required="required" type="number" value="{{characterInfo.experience}}">
+                    <input class="w-input" id="experience" maxlength="256" name="experience" placeholder="Example Text" type="number" value="{{characterInfo.experience}}">
                     <label for="playerName">Player Name</label>
-                    <input class="w-input" id="playerName" maxlength="256" name="playerName" placeholder="Example Text" required="required" type="text" value="{{characterInfo.playerName}}">
+                    <input class="w-input" id="playerName" maxlength="256" name="playerName" placeholder="Example Text" type="text" value="{{characterInfo.playerName}}">
                 </div>
             </div>
             <div class="row w-row">
                 <div class="w-clearfix w-col w-col-2">
                     <h3 class="heading">Strength</h3>
-                    <input class="text-field w-input" id="strength" maxlength="256" name="strength" placeholder="value" required="required" type="number" value="{{stats.strength}}">
-                    <input class="text-field w-input" id="strengthMod" maxlength="256" name="strengthMod" placeholder="modifier" required="required" type="number" value="{{stats.strengthMod}}">
+                    <input class="text-field w-input" id="strength" maxlength="256" name="strength" placeholder="value" type="number" value="{{stats.strength}}">
+                    <input class="text-field w-input" id="strengthMod" maxlength="256" name="strengthMod" placeholder="modifier" type="number" value="{{stats.strengthMod}}">
                 </div>
                 <div class="w-clearfix w-col w-col-2">
                     <h3 class="heading">Dexterity</h3>
-                    <input class="text-field w-input" id="dexterity" maxlength="256" name="dexterity" placeholder="value" required="required" type="number" value="{{stats.dexterity}}">
-                    <input class="text-field w-input" id="dexterityMod" maxlength="256" name="dexterityMod" placeholder="modifier" required="required" type="number" value="{{stats.dexterityMod}}">
+                    <input class="text-field w-input" id="dexterity" maxlength="256" name="dexterity" placeholder="value" type="number" value="{{stats.dexterity}}">
+                    <input class="text-field w-input" id="dexterityMod" maxlength="256" name="dexterityMod" placeholder="modifier" type="number" value="{{stats.dexterityMod}}">
                 </div>
                 <div class="w-clearfix w-col w-col-2">
                     <h3 class="heading">Constitution</h3>
-                    <input class="text-field w-input" id="constitution" maxlength="256" name="constitution" placeholder="value" required="required" type="number" value="{{stats.constitution}}">
-                    <input class="text-field w-input" id="constitutionMod" maxlength="256" name="constitutionMod" placeholder="modifier" required="required" type="number" value="{{stats.constitutionMod}}">
+                    <input class="text-field w-input" id="constitution" maxlength="256" name="constitution" placeholder="value" type="number" value="{{stats.constitution}}">
+                    <input class="text-field w-input" id="constitutionMod" maxlength="256" name="constitutionMod" placeholder="modifier" type="number" value="{{stats.constitutionMod}}">
                 </div>
                 <div class="w-clearfix w-col w-col-2">
                     <h3 class="heading">Intelligence</h3>
-                    <input class="text-field w-input" id="intelligence" maxlength="256" name="intelligence" placeholder="value" required="required" type="number" value="{{stats.intelligence}}">
-                    <input class="text-field w-input" id="intelligenceMod" maxlength="256" name="intelligenceMod" placeholder="modifier" required="required" type="number" value="{{stats.intelligenceMod}}">
+                    <input class="text-field w-input" id="intelligence" maxlength="256" name="intelligence" placeholder="value" type="number" value="{{stats.intelligence}}">
+                    <input class="text-field w-input" id="intelligenceMod" maxlength="256" name="intelligenceMod" placeholder="modifier" type="number" value="{{stats.intelligenceMod}}">
                 </div>
                 <div class="w-clearfix w-col w-col-2">
                     <h3 class="heading">Wisdom</h3>
-                    <input class="text-field w-input" id="wisdom" maxlength="256" name="wisdom" placeholder="value" required="required" type="number" value="{{stats.wisdom}}">
-                    <input class="text-field w-input" id="wisdomMod" maxlength="256" name="wisdomMod" placeholder="bonus" required="required" type="number" value="{{stats.wisdomMod}}">
+                    <input class="text-field w-input" id="wisdom" maxlength="256" name="wisdom" placeholder="value" type="number" value="{{stats.wisdom}}">
+                    <input class="text-field w-input" id="wisdomMod" maxlength="256" name="wisdomMod" placeholder="bonus" type="number" value="{{stats.wisdomMod}}">
                 </div>
                 <div class="w-clearfix w-col w-col-2">
                     <h3 class="heading">Charisma</h3>
-                    <input class="text-field w-input" id="charisma" maxlength="256" name="charisma" placeholder="value" required="required" type="number" value="{{stats.charisma}}">
-                    <input class="text-field w-input" id="charismaMod" maxlength="256" name="charismaMod" placeholder="bonus" required="required" type="number" value="{{stats.charismaMod}}">
+                    <input class="text-field w-input" id="charisma" maxlength="256" name="charisma" placeholder="value" type="number" value="{{stats.charisma}}">
+                    <input class="text-field w-input" id="charismaMod" maxlength="256" name="charismaMod" placeholder="bonus" type="number" value="{{stats.charismaMod}}">
                 </div>
             </div>
             <div class="w-row">
@@ -83,29 +84,29 @@
                     <div class="w-row">
                         <div class="w-clearfix w-col w-col-4">
                             <h5 class="heading">Armor Class</h5>
-                            <input class="text-field w-input" id="armorClass" maxlength="256" name="armorClass" placeholder="AC" required="required" type="number" value="{{survivalInfo.armorClass}}">
+                            <input class="text-field w-input" id="armorClass" maxlength="256" name="armorClass" placeholder="AC" type="number" value="{{survivalInfo.armorClass}}">
                         </div>
                         <div class="w-clearfix w-col w-col-4">
                             <h5 class="heading">Initiative</h5>
-                            <input class="text-field w-input" id="initiative" maxlength="256" name="initiative" placeholder="Initiative" required="required" type="number" value="{{survivalInfo.initiative}}">
+                            <input class="text-field w-input" id="initiative" maxlength="256" name="initiative" placeholder="Initiative" type="number" value="{{survivalInfo.initiative}}">
                         </div>
                         <div class="w-clearfix w-col w-col-4">
                             <h5 class="heading">Speed</h5>
-                            <input class="text-field w-input" id="speed" maxlength="256" name="speed" placeholder="speed (ft)" required="required" type="number" value="{{survivalInfo.speed}}">
+                            <input class="text-field w-input" id="speed" maxlength="256" name="speed" placeholder="speed (ft)" type="number" value="{{survivalInfo.speed}}">
                         </div>
                     </div>
                     <label for="maxHp">Max HP</label>
-                    <input class="text-field w-input" id="maxHp" maxlength="256" name="maxHp" placeholder="Max HP" required="required" type="number" value="{{survivalInfo.maxHp}}">
+                    <input class="text-field w-input" id="maxHp" maxlength="256" name="maxHp" placeholder="Max HP" type="number" value="{{survivalInfo.maxHp}}">
                     <h2 class="heading">Hit Points</h2>
-                    <input class="text-field w-input" id="currentHp" maxlength="256" name="currentHp" placeholder="Current HP" required="required" type="number" value="{{survivalInfo.currentHp}}">
+                    <input class="text-field w-input" id="currentHp" maxlength="256" name="currentHp" placeholder="Current HP" type="number" value="{{survivalInfo.currentHp}}">
                     <h4 class="heading">Temp Hit Points</h4>
-                    <input class="text-field w-input" id="tempHp" maxlength="256" name="tempHp" placeholder="Temp HP" required="required" type="number" value="{{survivalInfo.tempHp}}">
+                    <input class="text-field w-input" id="tempHp" maxlength="256" name="tempHp" placeholder="Temp HP" type="number" value="{{survivalInfo.tempHp}}">
                     <div class="w-row">
                         <div class="w-col w-col-6">
                             <h2 class="heading">Hit Dice</h2>
                             <label class="field-label" for="totalHitDie">Total</label>
-                            <input class="text-field w-input" id="totalHitDie" maxlength="256" name="totalHitDie" placeholder="Total Hit Die" required="required" type="number" value="{{survivalInfo.totalHitDie}}">
-                            <input class="text-field w-input" id="currentHitDie" maxlength="256" name="currentHitDie" placeholder="Current Hit Die" required="required" type="number" value="{{survivalInfo.currentHitDie}}">
+                            <input class="text-field w-input" id="totalHitDie" maxlength="256" name="totalHitDie" placeholder="Total Hit Die" type="number" value="{{survivalInfo.totalHitDie}}">
+                            <input class="text-field w-input" id="currentHitDie" maxlength="256" name="currentHitDie" placeholder="Current Hit Die" type="number" value="{{survivalInfo.currentHitDie}}">
                         </div>
                         <div class="w-col w-col-6">
                             <h2 class="heading">Death Saves</h2>
@@ -143,25 +144,25 @@
                 <div class="column-2 w-clearfix w-col w-col-4">
                     <h2 class="heading">Saving Throws</h2>
                     <label for="strengthSave">Strength</label>
-                    <input class="text-field w-input" id="strengthSave" maxlength="256" name="strengthSave" placeholder="Example Text" required="required" type="number" value="{{survivalInfo.strengthSave.save}}">
+                    <input class="text-field w-input" id="strengthSave" maxlength="256" name="strengthSave" placeholder="Example Text" type="number" value="{{survivalInfo.strengthSave.save}}">
                     <label for="dexteritySave">Dexterity</label>
-                    <input class="text-field w-input" id="dexteritySave" maxlength="256" name="dexteritySave" placeholder="Example Text" required="required" type="number" value="{{survivalInfo.dexteritySave.save}}">
+                    <input class="text-field w-input" id="dexteritySave" maxlength="256" name="dexteritySave" placeholder="Example Text" type="number" value="{{survivalInfo.dexteritySave.save}}">
                     <label for="constitutionSave">Constitution</label>
-                    <input class="text-field w-input" id="constitutionSave" maxlength="256" name="constitutionSave" placeholder="Example Text" required="required" type="number" value="{{survivalInfo.constitutionSave.save}}">
+                    <input class="text-field w-input" id="constitutionSave" maxlength="256" name="constitutionSave" placeholder="Example Text" type="number" value="{{survivalInfo.constitutionSave.save}}">
                     <label for="intelligenceSave">Intelligence</label>
-                    <input class="text-field w-input" id="intelligenceSave" maxlength="256" name="intelligenceSave" placeholder="Example Text" required="required" type="number" value="{{survivalInfo.intelligenceSave.save}}">
+                    <input class="text-field w-input" id="intelligenceSave" maxlength="256" name="intelligenceSave" placeholder="Example Text" type="number" value="{{survivalInfo.intelligenceSave.save}}">
                     <label for="wisdomSave">Wisdom</label>
-                    <input class="text-field w-input" id="wisdomSave" maxlength="256" name="wisdomSave" placeholder="Example Text" required="required" type="number" value="{{survivalInfo.wisdomSave.save}}">
+                    <input class="text-field w-input" id="wisdomSave" maxlength="256" name="wisdomSave" placeholder="Example Text" type="number" value="{{survivalInfo.wisdomSave.save}}">
                     <label for="field">Charisma</label>
-                    <input class="text-field w-input" id="charismaSave" maxlength="256" name="charismaSave" placeholder="Example Text" required="required" type="number" value="{{survivalInfo.charismaSave.save}}">
+                    <input class="text-field w-input" id="charismaSave" maxlength="256" name="charismaSave" placeholder="Example Text" type="number" value="{{survivalInfo.charismaSave.save}}">
                 </div>
                 <div class="w-clearfix w-col w-col-4">
                     <h2 class="heading">Inspiration</h2>
-                    <input class="text-field w-input" id="inspiration" maxlength="256" name="inspiration" placeholder="Example Text" required="required" type="number" value="{{stats.insperation}}">
+                    <input class="text-field w-input" id="inspiration" maxlength="256" name="inspiration" placeholder="Example Text" type="number" value="{{stats.insperation}}">
                     <h2 class="heading">Proficiency Bonus</h2>
-                    <input class="text-field w-input" id="proficiencyBonus" maxlength="256" name="proficiencyBonus" placeholder="Example Text" required="required" type="number" value="{{stats.proficiencyBonus}}">
+                    <input class="text-field w-input" id="proficiencyBonus" maxlength="256" name="proficiencyBonus" placeholder="Example Text" type="number" value="{{stats.proficiencyBonus}}">
                     <h2 class="heading">Passive Wisdom (Perception)</h2>
-                    <input class="text-field w-input" id="perception" maxlength="256" name="perception" placeholder="Example Text" required="required" type="number" value="{{stats.perception}}">
+                    <input class="text-field w-input" id="perception" maxlength="256" name="perception" placeholder="Example Text" type="number" value="{{stats.perception}}">
                 </div>
             </div>
             <div class="w-row">
@@ -171,28 +172,28 @@
                         {{#attackInfo.attacks}}
                         <div class="w-clearfix w-col w-col-4">
                             <h3 class="heading">Name</h3>
-                            <input class="text-field w-input" id="weaponName" maxlength="256" name="weaponName" placeholder="Example Text" required="required" type="text" value="{{weaponName}}">
+                            <input class="text-field w-input" id="weaponName" maxlength="256" name="weaponName" placeholder="Example Text" type="text" value="{{weaponName}}">
                         </div>
                         <div class="w-clearfix w-col w-col-4">
                             <h3 class="heading">ATK Bonus</h3>
-                            <input class="text-field w-input" id="attackBonus" maxlength="256" name="attackBonus" placeholder="Example Text" required="required" type="number" value="{{attackBonus}}">
+                            <input class="text-field w-input" id="attackBonus" maxlength="256" name="attackBonus" placeholder="Example Text" type="number" value="{{attackBonus}}">
                         </div>
                         <div class="w-clearfix w-col w-col-4">
                             <h3 class="heading">Damage &amp; Type</h3>
-                            <input class="text-field w-input" id="damage" maxlength="256" name="damage" placeholder="Example Text" required="required" type="text" value="{{attackDamageType.count}}d{{attackDamageType.faces}}+{{attackDamageBonus}}">
+                            <input class="text-field w-input" id="damage" maxlength="256" name="damage" placeholder="Example Text" type="text" value="{{attackDamageType.count}}d{{attackDamageType.faces}}+{{attackDamageBonus}}">
                         </div>
                         {{/attackInfo.attacks}}
                         <div class="w-clearfix w-col w-col-4">
                             <h3 class="heading">Name</h3>
-                            <input class="text-field w-input" id="newWeaponName" maxlength="256" name="newWeaponName" placeholder="Example Text" required="required" type="text">
+                            <input class="text-field w-input" id="newWeaponName" maxlength="256" name="newWeaponName" placeholder="Example Text" type="text">
                         </div>
                         <div class="w-clearfix w-col w-col-4">
                             <h3 class="heading">ATK Bonus</h3>
-                            <input class="text-field w-input" id="newAttackBonus" maxlength="256" name="newAttackBonus" placeholder="Example Text" required="required" type="number">
+                            <input class="text-field w-input" id="newAttackBonus" maxlength="256" name="newAttackBonus" placeholder="Example Text" type="number">
                         </div>
                         <div class="w-clearfix w-col w-col-4">
                             <h3 class="heading">Damage &amp; Type</h3>
-                            <input class="text-field w-input" id="newDamage" maxlength="256" name="newDamage" placeholder="Example Text" required="required" type="text">
+                            <input class="text-field w-input" id="newDamage" maxlength="256" name="newDamage" placeholder="Example Text" type="text">
                         </div>
                     </div>
                 </div>
