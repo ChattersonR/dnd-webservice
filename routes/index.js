@@ -12,14 +12,14 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
     var characterName = req.body.newCharName;
-    dbService.createNewCharacter(characterName, function(){
-        res.redirect('/' + characterName);
+    dbService.createNewCharacter(characterName, function(uuid){
+        res.redirect('/' + uuid);
         //res.render('stats', characterData);
     });
 });
 
-router.get('/:characterName', function(req, res, next) {
-    dbService.getCharacterRecord(req.params.characterName, function(characterData){
+router.get('/:uuid', function(req, res, next) {
+    dbService.getCharacterRecord(req.params.uuid, function(characterData){
         console.log("Character data returned by DB: " + characterData)
         res.render('stats', characterData);
     });
@@ -27,6 +27,7 @@ router.get('/:characterName', function(req, res, next) {
 
 router.post('/:id', function(req, res, next) {
     dbService.updateCharacter(
+        req.body.uuid,
         req.body.charName,
         req.body.classLevel,
         req.body.race,

@@ -1,7 +1,7 @@
 //Reference http://wern-ancheta.com/blog/2015/04/26/getting-started-with-couchdb-in-node-dot-js/
+var uuid = require('uuid/v1')
 var aws = require('aws-sdk');
 aws.config.sslEnabled = false
-console.log(aws.config)
 
 //var dynamo = new aws.DynamoDB({apiVersion: '2012-08-10',
 var ddb = new aws.DynamoDB.DocumentClient({apiVersion: '2012-08-10', endpoint: 'http://dynamodb.us-east-2.amazonaws.com'});
@@ -41,18 +41,14 @@ module.exports={
   getCharacterList: function (callback) {
     var params = {
         TableName: 'characterDb',
-        AttributesToGet: ['characterName']
+        AttributesToGet: ['characterName', 'characterInfo']
     };
 
     ddb.scan(params, function(err, body){
-      console.log("test")
-      console.log(err)
-      console.log(body)
       if(!err){
         var returnObject = { 'names':[] };
         body.Items.forEach(function(element, index, array){
-            console.log(element)
-          returnObject.names.push(element.characterName);
+          returnObject.names.push({name: element.characterInfo.characterName, uuid: element.characterName});
         });
         callback(returnObject);
       } else {
@@ -62,12 +58,12 @@ module.exports={
     });
   },
 
-  getCharacterRecord: function (characterName, callback) {
-    console.log("Retrieving character data for: " + characterName);
+  getCharacterRecord: function (uuid, callback) {
+    console.log("Retrieving character data for: " + uuid);
     var params = {
         TableName: 'characterDb',
         Key: {
-            'characterName' : characterName
+            'characterName' : uuid
         }
     };
     ddb.get(params, function(err, body){
@@ -85,10 +81,11 @@ module.exports={
   createNewCharacter: function(characterName, callback) {
     console.log("Creating new character: " + characterName  )
 
+    var uniqueId = uuid()
     var params = {
             TableName: 'characterDb',
             Item: {
-                'characterName' : characterName,
+                'characterName' : uniqueId,
                 'characterInfo' : {
                     'characterName' : characterName
                 }
@@ -97,7 +94,7 @@ module.exports={
 
     ddb.put(params, function(err, body){
       if(!err){
-        callback();
+        callback(uniqueId);
         //callback(body.rows[0].doc);
         //Do nothing?
       } else {
@@ -106,7 +103,7 @@ module.exports={
     });
   },
 
-  updateCharacter: function(characterName, classLevelString, race,
+  updateCharacter: function(uuid, characterName, classLevelString, race,
     background, alignment, experience, playerName,
     strength, strengthMod, dex, dexMod, con, conMod,
     int, intMod, wis, wisMod, cha, chaMod, armorClass,
@@ -132,7 +129,6 @@ module.exports={
             });
           }
      }
-        console.log(attackList)
 
       if((!newWeapon === undefined && !newWeapon === "") ||
          (!newAttackBonus === undefined && !newAttackBonus === "") ||
@@ -155,7 +151,7 @@ module.exports={
       }
 
           params.Item.characterInfo = {}
-          params.Item.characterInfo.characterName = characterName;
+          params.Item.characterInfo.characterName = uuid;
 
           if(classLevelString) params.Item.characterInfo.class = parseClassLevelString(classLevelString);
           if(background) params.Item.characterInfo.background = background;
@@ -245,7 +241,6 @@ module.exports={
             params.Item.attackInfo = {}
             params.Item.attackInfo.attacks = attackList;
 
-            console.log("attackInfo: " + params.Item.attackInfo.attacks)
           }
           //Inventory)
 
