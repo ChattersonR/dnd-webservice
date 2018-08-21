@@ -4,7 +4,7 @@ aws.config.sslEnabled = false
 console.log(aws.config)
 
 //var dynamo = new aws.DynamoDB({apiVersion: '2012-08-10',
-var ddb = new aws.DynamoDB.DocumentClient({apiVersion: '2012-08-10'});
+var ddb = new aws.DynamoDB.DocumentClient({apiVersion: '2012-08-10', endpoint: 'dynamodb.us-east-1.amazonaws.com'});
 
 var characterDb = 'characterDb';
 
