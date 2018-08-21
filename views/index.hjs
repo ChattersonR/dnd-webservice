@@ -14,7 +14,7 @@
       {{#names}}
       <tr>
         <td>
-          <a href="http://localhost:3000/{{.}}">{{.}}</a><br />
+          <a href="./{{.}}">{{.}}</a><br />
         </td>
       </tr>
       {{/names}}
