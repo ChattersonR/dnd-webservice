@@ -24,7 +24,7 @@
 
 <body>
     <div class="w-form">
-        <form action="/{{_id}}"method="post">
+        <form action="/{{characterName}}"method="post">
             <button type="submit">Save</button><br />
             <input class="text-field-2 w-input" id="charName" maxlength="256" name="charName" placeholder="Character Name" type="text" value="{{characterInfo.characterName}}">
             <div class="w-row">
@@ -169,30 +169,28 @@
                 <div class="w-col w-col-6">
                     <h2 class="heading">Attacks &amp; Spellcasting</h2>
                     <div class="w-row">
-                        {{#attackInfo.attacks}}
                         <div class="w-clearfix w-col w-col-4">
                             <h3 class="heading">Name</h3>
+                            {{#attackInfo.attacks}}
                             <input class="text-field w-input" id="weaponName" maxlength="256" name="weaponName" placeholder="Example Text" type="text" value="{{weaponName}}">
-                        </div>
-                        <div class="w-clearfix w-col w-col-4">
-                            <h3 class="heading">ATK Bonus</h3>
-                            <input class="text-field w-input" id="attackBonus" maxlength="256" name="attackBonus" placeholder="Example Text" type="number" value="{{attackBonus}}">
-                        </div>
-                        <div class="w-clearfix w-col w-col-4">
-                            <h3 class="heading">Damage &amp; Type</h3>
-                            <input class="text-field w-input" id="damage" maxlength="256" name="damage" placeholder="Example Text" type="text" value="{{attackDamageType.count}}d{{attackDamageType.faces}}+{{attackDamageBonus}}">
-                        </div>
-                        {{/attackInfo.attacks}}
-                        <div class="w-clearfix w-col w-col-4">
-                            <h3 class="heading">Name</h3>
+                            {{/attackInfo.attacks}}
+
                             <input class="text-field w-input" id="newWeaponName" maxlength="256" name="newWeaponName" placeholder="Example Text" type="text">
                         </div>
                         <div class="w-clearfix w-col w-col-4">
                             <h3 class="heading">ATK Bonus</h3>
+                            {{#attackInfo.attacks}}
+                            <input class="text-field w-input" id="attackBonus" maxlength="256" name="attackBonus" placeholder="Example Text" type="number" value="{{attackBonus}}">
+                            {{/attackInfo.attacks}}
+
                             <input class="text-field w-input" id="newAttackBonus" maxlength="256" name="newAttackBonus" placeholder="Example Text" type="number">
                         </div>
                         <div class="w-clearfix w-col w-col-4">
                             <h3 class="heading">Damage &amp; Type</h3>
+                            {{#attackInfo.attacks}}
+                            <input class="text-field w-input" id="damage" maxlength="256" name="damage" placeholder="Example Text" type="text" value="{{attackDamageType.count}}d{{attackDamageType.faces}}+{{attackDamageBonus}}">
+                            {{/attackInfo.attacks}}
+
                             <input class="text-field w-input" id="newDamage" maxlength="256" name="newDamage" placeholder="Example Text" type="text">
                         </div>
                     </div>
@@ -217,11 +215,30 @@
                 </div>
             </div>
             <h2 class="heading">Inventory</h2>
-            <textarea class="w-input" id="inventory" maxlength="5000" name="inventory" placeholder="Example Text" rows="20" >
+            <div class="w-clearfix w-col w-col-4">
+                <h3 class="heading">Name</h3>
                 {{#inventory.items}}
-{{count}} {{name}} {{description}}\n
+                <input class="text-field w-input" id="itemName" maxlength="256" name="itemName" placeholder="Example Text" type="text" value="{{name}}">
                 {{/inventory.items}}
-            </textarea>
+
+                <input class="text-field w-input" id="itemName" maxlength="256" name="itemName" placeholder="Example Text" type="text" value="">
+            </div>
+            <div class="w-clearfix w-col w-col-4">
+                <h3 class="heading">Count</h3>
+                {{#inventory.items}}
+                <input class="text-field w-input" id="itemCount" maxlength="256" name="itemCount" placeholder="Example Text" type="text" value="{{count}}">
+                {{/inventory.items}}
+
+                <input class="text-field w-input" id="itemCount" maxlength="256" name="itemCount" placeholder="Example Text" type="text" value="">
+            </div>
+            <div class="w-clearfix w-col w-col-4">
+                <h3 class="heading">Description</h3>
+                {{#inventory.items}}
+                <input class="text-field w-input" id="itemDescription" maxlength="256" name="itemDescription" placeholder="Example Text" type="text" value="{{description}}">
+                {{/inventory.items}}
+
+                <input class="text-field w-input" id="itemDescription" maxlength="256" name="itemDescription" placeholder="Example Text" type="text" value="">
+            </div>
         </form>
         <div class="w-form-done">
             <div>

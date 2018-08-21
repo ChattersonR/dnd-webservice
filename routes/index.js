@@ -20,12 +20,13 @@ router.post('/', function(req, res, next) {
 
 router.get('/:characterName', function(req, res, next) {
     dbService.getCharacterRecord(req.params.characterName, function(characterData){
+        console.log("Character data returned by DB: " + characterData)
         res.render('stats', characterData);
     });
 });
 
 router.post('/:id', function(req, res, next) {
-    dbService.updateCharacter(req.params.id,
+    dbService.updateCharacter(
         req.body.charName,
         req.body.classLevel,
         req.body.race,
