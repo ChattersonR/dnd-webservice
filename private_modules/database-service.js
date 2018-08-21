@@ -4,7 +4,7 @@ aws.config.sslEnabled = false
 console.log(aws.config)
 
 //var dynamo = new aws.DynamoDB({apiVersion: '2012-08-10',
-var ddb = new aws.DynamoDB.DocumentClient({apiVersion: '2012-08-10', endpoint: 'dynamodb.us-east-1.amazonaws.com'});
+var ddb = new aws.DynamoDB.DocumentClient({apiVersion: '2012-08-10', endpoint: 'http://dynamodb.us-east-2.amazonaws.com'});
 
 var characterDb = 'characterDb';
 
@@ -56,7 +56,7 @@ module.exports={
         });
         callback(returnObject);
       } else {
-        console.err("getCharacterList error: " + err)
+        console.error("getCharacterList error: " + err)
         throw err;
       }
     });
@@ -76,7 +76,7 @@ module.exports={
         var characterData = body.Item;
         callback(characterData);
       } else {
-        console.err("getCharacterRecord error: " + err)
+        console.error("getCharacterRecord error: " + err)
         throw err;
       }
     });
