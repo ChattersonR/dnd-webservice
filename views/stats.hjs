@@ -24,7 +24,7 @@
 
 <body>
     <div class="w-form">
-        <form action="/{{uuid}}"method="post">
+        <form action="/{{characterName}}"method="post">
             <button type="submit">Save</button><br />
             <input class="text-field-2 w-input" id="charName" maxlength="256" name="charName" placeholder="Character Name" type="text" value="{{characterInfo.characterName}}">
             <div class="w-row">

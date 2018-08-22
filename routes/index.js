@@ -25,9 +25,9 @@ router.get('/:uuid', function(req, res, next) {
     });
 });
 
-router.post('/:id', function(req, res, next) {
+router.post('/:uuid', function(req, res, next) {
     dbService.updateCharacter(
-        req.body.uuid,
+        req.params.uuid,
         req.body.charName,
         req.body.classLevel,
         req.body.race,
@@ -78,7 +78,7 @@ router.post('/:id', function(req, res, next) {
         req.body.bonds,
         req.body.inventory,
         function(){
-            res.redirect('/' + req.body.charName);
+            res.redirect('/' + req.params.uuid);
         }
     );
 });

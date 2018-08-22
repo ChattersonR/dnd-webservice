@@ -70,6 +70,7 @@ module.exports={
       if(!err){
         console.log("getCharacter response: " + body.Item.characterName)
         var characterData = body.Item;
+        characterData.uuid = characterData.characterName
         callback(characterData);
       } else {
         console.error("getCharacterRecord error: " + err)
@@ -117,6 +118,7 @@ module.exports={
     inventory,
     callback)
     {
+
       var attackList = [];
       if(weaponList) {
           for(i = 0; i < weaponList.length; i++) {
@@ -146,12 +148,12 @@ module.exports={
       var params = {
         TableName: 'characterDb',
         Item: {
-            'characterName' : characterName
+            'characterName' : uuid
         }
       }
 
           params.Item.characterInfo = {}
-          params.Item.characterInfo.characterName = uuid;
+          params.Item.characterInfo.characterName = characterName;
 
           if(classLevelString) params.Item.characterInfo.class = parseClassLevelString(classLevelString);
           if(background) params.Item.characterInfo.background = background;
